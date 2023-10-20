@@ -1,15 +1,15 @@
 # Downloadbypass
-Box, Onedrive, Allego, Dropbox, etc sometimes prevent you from downloading files and priting from your browser. Not anymore with this script.
+Box, Onedrive, Allego, Sharepoint and other sometimes prevent you from downloading files and priting from your browser. Not anymore with this script.
 
 # Context
-Some sites have implemented specific web-based PDF readers to ensure that PDF content cannot be downloaded. In general, these websites will also prevent you from printing the page, by rendering a white page when printing. This is a common "prevent download" functionality.
+Some sites have implemented specific web-based PDF readers to ensure that PDF content cannot be downloaded. In general, these websites will also prevent you from printing the page, by rendering a white page when printing. This is a common functionality called "prevent download".
 
 This algorithm tries another approach which is to snapshot the HTML content of the webpage directly on the client using javascript executing in the browser's console. Once the content has been retrieved, PNG images are downloaded. It is easy to extend this algorithm to publish a PDF if needed.
 
-Some websites are particularily nasty and will limit the number of pages or slides rendered at the same time. This is not an issue, as our algorithm can detect when the content is not yet ready to be downloaded. The user can scroll over the document, render missing pages, and run the script again. The script will indicate "done !" when all slides have been downloaded.
+Some websites are particularily nasty and will limit the number of pages or slides rendered at the same time. This is not an issue. This algorithm can detect when the content is not yet ready to be downloaded. The user can scroll over the document, render missing pages, and run the script again. The script will gather new pages incrementally, and indicate "done !" when all slides have been downloaded.
 
 # Prerequisites
-Before running the algorithm, you need to identify the structure of the page rendering the PDF document. The code will generally contain a set of divs called "page N", "slide N", "section N", etc. Update the divPagePrefix variable with this prefix.
+Before running the algorithm, you need to identify the structure of the page rendering the PDF document. This can be done by right clicking on the page in your browser and clicking on "Inspect". The HTML code will generally contain a set of divs called "page N", "slide N", "section N", etc. Update the divPagePrefix variable with this prefix.
 
 Next, update the nbPages variable with the number of pages contained in the document. 
 
