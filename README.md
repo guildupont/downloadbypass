@@ -23,3 +23,13 @@ If needed, adjust the imageSizeThreshold variable which helps ignoring pages tha
 5. That's it! Once the "done !!!" log appears, all images have been successfully downloaded as PNG.
 
 
+
+# Examples:
+- For Allego:
+  - var divPagePrefix = "pageSection"
+  - relaunch the loop multiple times after scrolling over the page until all pages have been collected
+ 
+- For Box:
+  -  var divPagePrefix = "bp-page-"
+  -  launch
+
