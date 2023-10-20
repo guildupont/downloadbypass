@@ -1,10 +1,12 @@
 
+// GLOBAL SETTINGS
 html2canvas // test if the library has been correctly loaded
-var divPagePrefix = "pageSection" 
-var nbPages = 76
-var pages = []
-var imageSizeThreshold = 10000
+var divPagePrefix = "pageSection" // the algorithm will collect all divs starting with this prefix followed by one page number
+var nbPages = 76 // the algorithm will look for all pages between 1 and nbPages
+var pages = [] // this global variable is used to store results in case of multiple iterations
+var imageSizeThreshold = 10000 // images below this size will be rejected. Some websites render grey pages until the user scrolls closer to the page.
 
+// ITERATION (CAN BE LAUNCHED MULTIPLE TIMES UNTIL done!!! APPEARS
 for(lPageNb = 1; lPageNb <= nbPages; lPageNb++){
 		var lDivName = divPagePrefix + lPageNb
 		var lDiv = document.getElementById(lDivName)
@@ -38,7 +40,7 @@ for(lPageNb = 1; lPageNb <= nbPages; lPageNb++){
 			console.log("- skipping: " + lDivName + ", already existed in global array of size " + pages.filter(Boolean).length)
 		}
 	}
-	console.log("currently downloaded " + pages.filter(Boolean).length + " sections") 
+	console.log("after this iteration, we have downloaded " + pages.filter(Boolean).length + " sections") 
 	if (pages.filter(Boolean).length == nbPages){
 			console.log("- done!!!")
 	}
